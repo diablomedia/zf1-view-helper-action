@@ -43,7 +43,7 @@ class Zend_View_Helper_ActionTest extends PHPUnit\Framework\TestCase
     public function setUp()
     {
         $this->_origServer = $_SERVER;
-        $_SERVER = array(
+        $_SERVER           = array(
             'SCRIPT_FILENAME' => __FILE__,
             'PHP_SELF'        => __FILE__,
         );
@@ -51,8 +51,8 @@ class Zend_View_Helper_ActionTest extends PHPUnit\Framework\TestCase
         $front = Zend_Controller_Front::getInstance();
         $front->resetInstance();
 
-        $this->request  = new Zend_Controller_Request_Http('http://framework.zend.com/action-foo');
-        $this->response = new Zend_Controller_Response_Http();
+        $this->request                              = new Zend_Controller_Request_Http('http://framework.zend.com/action-foo');
+        $this->response                             = new Zend_Controller_Response_Http();
         $this->response->headersSentThrowsException = false;
         $front->setRequest($this->request)
               ->setResponse($this->response)
@@ -200,7 +200,7 @@ class Zend_View_Helper_ActionTest extends PHPUnit\Framework\TestCase
         $front = Zend_Controller_Front::getInstance();
         $front->resetInstance();
 
-        $response = new Zend_Controller_Response_Http();
+        $response                             = new Zend_Controller_Response_Http();
         $response->headersSentThrowsException = false;
         $front->setResponse($response)
               ->addModuleDirectory(dirname(__FILE__) . '/_files/modules');
@@ -232,7 +232,7 @@ class Zend_View_Helper_ActionTest extends PHPUnit\Framework\TestCase
 
     public function testNestingActionsDoesNotBreakPlaceholderHelpers()
     {
-        $html = $this->helper->action('nest', 'foo', 'foo');
+        $html  = $this->helper->action('nest', 'foo', 'foo');
         $title = $this->view->headTitle()->toString();
         $this->assertContains(' - ', $title, $title);
         $this->assertContains('Foo Nest', $title);
@@ -253,7 +253,6 @@ class Zend_View_Helper_ActionTest extends PHPUnit\Framework\TestCase
         $partial->partial('partialActionCall.phtml');
 
         $this->assertSame($this->view, Zend_Controller_Action_HelperBroker::getStaticHelper('viewRenderer')->view);
-
     }
 
     /**

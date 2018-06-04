@@ -134,8 +134,7 @@ class Zend_View_Helper_Action extends Zend_View_Helper_Abstract
 
 
         if (!$this->request->isDispatched()
-            || $this->response->isRedirect())
-        {
+            || $this->response->isRedirect()) {
             // forwards and redirects render nothing
             return '';
         }
