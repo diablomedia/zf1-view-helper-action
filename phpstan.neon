@@ -1,6 +1,7 @@
 parameters:
-    level: 7
-    paths: 
+    checkMissingIterableValueType: false
+    level: 8
+    paths:
         - ./
     excludes_analyse:
         - %rootDir%/../../../vendor/*
