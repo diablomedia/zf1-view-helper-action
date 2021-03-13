@@ -8,18 +8,19 @@ $finder = PhpCsFixer\Finder::create()
 
 return PhpCsFixer\Config::create()
     ->setRiskyAllowed(true)
-    ->setRules([
-        '@PSR2' => true,
+    ->setRules(array(
+        '@PSR2'                     => true,
         '@PHPUnit60Migration:risky' => true,
-        'binary_operator_spaces' => [
-            'default' => 'align_single_space_minimal',
-            'operators' => ['||' => null, '&&' => null]
-        ],
+        '@PHPUnit84Migration:risky' => true,
+        'binary_operator_spaces'    => array(
+            'default'   => 'align_single_space_minimal',
+            'operators' => array('||' => null, '&&' => null)
+        ),
         'single_quote' => true,
-        'array_syntax' => ['syntax' => 'long'],
-        'concat_space' => ['spacing' => 'one'],
-        'psr0' => true
-    ])
+        'array_syntax' => array('syntax' => 'long'),
+        'concat_space' => array('spacing' => 'one'),
+        'psr0'         => false
+    ))
     ->setUsingCache(true)
     ->setFinder($finder);
 ;
