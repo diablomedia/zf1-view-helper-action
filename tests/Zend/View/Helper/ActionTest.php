@@ -288,6 +288,6 @@ class Zend_View_Helper_ActionTest extends PHPUnit\Framework\TestCase
     public function testActionCalledWithinActionResetsResponseState()
     {
         $value = $this->helper->action('bar-one', 'baz', 'foo');
-        $this->assertRegExp('/Baz-Three-View-Script\s+Baz-Two-View-Script\s+Baz-One-View-Script/s', $value);
+        $this->assertMatchesRegularExpression('/Baz-Three-View-Script\s+Baz-Two-View-Script\s+Baz-One-View-Script/s', $value);
     }
 }
