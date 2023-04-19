@@ -34,6 +34,12 @@
  */
 class Zend_View_Helper_ActionTest extends PHPUnit\Framework\TestCase
 {
+    protected $_origServer;
+    protected $request;
+    protected $response;
+    protected $view;
+    protected $helper;
+
     /**
      * Sets up the fixture, for example, open a network connection.
      * This method is called before a test is executed.
