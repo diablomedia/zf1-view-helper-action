@@ -6,4 +6,7 @@
 [![Total Downloads](https://poser.pugx.org/diablomedia/zendframework1-view-helper-action/downloads)](https://packagist.org/packages/diablomedia/zendframework1-view-helper-action)
 [![License](https://poser.pugx.org/diablomedia/zendframework1-view-helper-action/license)](https://packagist.org/packages/diablomedia/zendframework1-view-helper-action)
 
+> [!WARNING]  
+> We've archived this repo as we're no longer using or maintaining Zend Framework 1
+
 This is just the Zend_View_Helper_Action component extracted from our fork of the Zend Framework 1 repo (https://github.com/diablomedia/zf1).
